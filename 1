@@ -1,0 +1,90 @@
+
+class Birds():
+    food = "Птичий корм" 
+    eggs = 'яйца'
+    def collect(self):
+        self.collect = self.eggs
+    def feed(self):
+        self.feed = self.food
+
+
+class Goose(Birds):
+    voice = "Га-га-га"
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+
+class Chicken(Birds):
+    voice = "Ко-ко-ко"
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+
+class Duck(Birds):
+    voice = "Кря-кря"
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+
+
+class Animals():
+    food = "Трава"
+    def feed(self):
+      self.feed = self.food
+
+class Cow(Animals):
+    voice = "Му"
+    milk = 'молоко'
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+    def milking(self):
+        self.milking = self.milk
+
+class Sheep(Animals):
+    voice = "Ме"
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+    def cut(self):
+        self.cut = self.wool
+
+class Goat(Animals):
+    voice = "Бе"
+    def __init__(self, name=" ", weight=0):
+        self.name = name
+        self.weight = weight
+
+
+
+
+
+Goose1 = Goose("Серый", 4)
+Goose2 = Goose("Белый", 3)
+Cow1 = Cow("Манька", 30)
+Sheep1 = Sheep("Барашек", 5)
+Sheep2 = Sheep("Кудрявый", 6)
+Chicken1 = Chicken("Ко-ко", 2)
+Chicken2 = Chicken("Кукареку", 1.5)
+Goat1 = Goat("Рога", 6)
+Goat2 = Goat("Копыта", 8)
+Duck1 = Duck("Кряква", 3)
+
+animals = [Goat1, Goat2, Cow1, Sheep1, Chicken1, Chicken2, Goose1, Goose2, Duck1]
+
+
+
+
+
+sum_ = 0
+max_ = 0
+max_name = None
+
+for animal in animals:
+    if animal.weight > max_:
+        max_ = animal.weight
+        max_name = animal.name
+    sum_ += animal.weight
+
+print(f'Общий вес - {sum_}')
+print(f'Самое тяжелое животное - {max_name} с весом {max_}')
